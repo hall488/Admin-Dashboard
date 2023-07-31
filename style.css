@@ -1,46 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
-    --icon-border-color: blue;
+    --icon-border-color: cadetblue;
 }
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(auto, 1fr) 4fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+}
+
+.menus {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 2fr 1fr;
+    gap: 64px;
+    margin-left: 32px;
+    margin-top: 32px;
+    margin-right: 32px;
 }
 
 .sidebar {
+    background-color:cadetblue;
+    color: white;
+}
+
+.logo i {
+    font-size: 56px;
+    text-align: center;
+}
+
+.logo div {
+    display: inline;
+}
+
+.sidebar .logo {
+    font-size: 56px;
+    padding-left: 32px;
+    padding-top: 32px;
+    padding-right: 32px;
+    
+}
+
+.menu1, .menu2 {
+    font-size: 32px;
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-columns: minmax(auto, 1fr);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    gap: 16px;
+}
+
+.menu1 {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.menu2 {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.menu1 li, .menu2 li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.menu1 li:hover, .menu2 li:hover {
+    background-color: rgb(63, 107, 109);
 }
 
 .page {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-rows: auto auto 1fr;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 24px 5fr 24px 60px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding-left: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header i:hover {
+    color: lightcoral;
+}
+
+input {
+    height: 32px;
+    margin-right: 10%;
+    border-radius: 16px;
+    border-style: none;
+    background-color: rgb(212, 226, 243);;
+    font-size: 24px;
+    padding-left: 16px;
+}
+
+.subheader {
+    display: grid;
+    grid-template-columns: 84px 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding-left: 32px;
+    padding-top:16px;
+    padding-bottom: 16px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0px 5px 3px grey;
+}
+
+.tag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 32px;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 8px;
+}
+
+.tag .welcome {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+    color: white;
+}
+
+.actions li {
+    font-size: 24px;
+    list-style-type: none;
+    background-color: cadetblue;
+    padding: 8px 16px;
+    border-radius: 16px;
+    flex: 0 1 100px;
+    text-align: center;
+}
+
+.actions li:hover {
+    background-color: rgb(63, 107, 109);
 }
 
 .content {
+    padding-top: 32px;
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
+    gap: 32px;
+    background-color:rgb(212, 226, 243);
+    padding-left: 32px;
 }
 
 .projects {
     grid-row: 1 / span 2;
-    
+    font-size: 24px;
 }
+
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 15px;
+    margin-top: 16px;
+    font-size: 14px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border: 5px solid black;
-    padding: 10px;
-    border-radius: 20px;
+    
+    padding: 32px;
+    border-radius: 16px;
+    justify-content: space-between;
+    background: linear-gradient(90deg, lightcoral 3%, white 0%);
+    box-shadow: 0px 5px 3px gray;
+}
+
+.card .head {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card .text, .card .icons {
+    color: rgb(88, 88, 88);
 }
 
 .card ul{
@@ -50,12 +216,89 @@
 
 .card .icons {
     display: grid;
+    margin-top: 32px;
     grid-template-columns: 2em 2em 2em;
-    
+    gap: 16px;
+}
+
+.card .icons li:hover {
+    color:lightcoral;
 }
 
 .icons li {
     list-style-type: none;
+}
+
+.news{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.update-container {
+    background-color: white;
+    border-radius: 16px;
+    flex: 1;
+    margin-top: 16px;
+    font-size: 14px;
+    margin-right: 32px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    box-shadow: 0px 5px 3px gray;
+}
+
+.updates {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.updates .head {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.updates .text {
+    
+}
+
+.line {
+    border:1px solid lightcoral;
+    margin: 16px 0px;
+}
+
+
+.friends {
+    font-size: 24px;
+}
+
+.friends-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: white;
+    padding: 32px;
+    border-radius: 16px;
+    margin-right: 32px;
+    box-shadow: 0px 5px 3px gray;
+}
+
+.ot-user {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.ot-info {
+    color: rgb(88, 88, 88);
+
 }
 
 .header img {
@@ -77,13 +320,15 @@
 }
 
 .fa-solid, .fa-brands {
-    color: black;
     font-size: 24px;
 }
 
 .footer {
     grid-column: 1 / span 2;
     justify-self: center;
+    gap: 10px;
+    padding: 20px;
+    font-size: 20px;
 }
 
 .fa-github {
@@ -94,4 +339,9 @@
 
 .fa-github:hover {
     transform: rotate(360deg) scale(1.2);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
