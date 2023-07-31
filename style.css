@@ -85,6 +85,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto auto 1fr;
+    
 }
 
 .header {
@@ -167,18 +168,29 @@ input {
 
 .content {
     padding-top: 32px;
-    display: grid;
-    grid-template: 1fr 1fr / 3fr 1fr;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 32px;
     background-color:rgb(212, 226, 243);
     padding-left: 32px;
+    padding-bottom: 32px;
+    padding-right: 32px;
+    flex-wrap: wrap;
 }
 
 .projects {
     grid-row: 1 / span 2;
     font-size: 24px;
+    flex: 3;
 }
 
+.group {
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
 .card-container {
     display: grid;
@@ -197,7 +209,11 @@ input {
     border-radius: 16px;
     justify-content: space-between;
     background: linear-gradient(90deg, lightcoral 3%, white 0%);
-    box-shadow: 0px 5px 3px gray;
+    box-shadow: 0px 3px 3px gray;
+}
+
+.card:hover {
+    box-shadow: 0px 5px 5px grey;
 }
 
 .card .head {
@@ -239,7 +255,7 @@ input {
 .update-container {
     background-color: white;
     border-radius: 16px;
-    flex: 1;
+    flex: 0 1 auto;
     margin-top: 16px;
     font-size: 14px;
     margin-right: 32px;
@@ -278,6 +294,7 @@ input {
 }
 
 .friends-container {
+    flex: 0 1 auto;
     margin-top: 16px;
     display: flex;
     flex-direction: column;
