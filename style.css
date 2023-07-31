@@ -1,0 +1,36 @@
+:root {
+    --icon-border-color: blue;
+}
+
+.header img {
+    width:50px;
+    border-radius: 30px;
+    border: 5px solid var(--icon-border-color);
+}
+
+.subheader img {
+    width:70px;
+    border-radius: 42px;
+    border: 7px solid var(--icon-border-color);
+}
+
+.ot-user img {
+    width:50px;
+    border-radius: 30px;
+    border: 5px solid var(--icon-border-color);
+}
+
+.fa-solid, .fa-brands {
+    color: black;
+    font-size: 24px;
+}
+
+.fa-github {
+    color: black;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
