@@ -21,9 +21,9 @@
     grid-auto-flow: column;
     grid-template-rows: 2fr 1fr;
     gap: 64px;
-    margin-left: 32px;
-    margin-top: 32px;
-    margin-right: 32px;
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-right: 16px;
 }
 
 .sidebar {
@@ -42,9 +42,9 @@
 
 .sidebar .logo {
     font-size: 56px;
-    padding-left: 32px;
-    padding-top: 32px;
-    padding-right: 32px;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
     
 }
 
@@ -90,7 +90,7 @@
 
 .header {
     display: grid;
-    grid-template-columns: 24px 5fr 24px 60px 1fr;
+    grid-template-columns: 24px minmax(100px, 1fr) 24px 60px 75px;
     gap: 16px;
     align-items: center;
     padding-left: 32px;
@@ -150,6 +150,9 @@ input {
     margin: 0;
     justify-content: center;
     color: white;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
 }
 
 .actions li {
